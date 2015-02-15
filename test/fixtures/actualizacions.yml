@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  peso: 9.99
+  dieta: 9.99
+  cardio: 9.99
+  talla: 9.99
+  muscular: 9.99
+  user_id: 1
+
+two:
+  user_id: 
+  peso: 9.99
+  dieta: 9.99
+  cardio: 9.99
+  talla: 9.99
+  muscular: 9.99
+  user_id: 1
