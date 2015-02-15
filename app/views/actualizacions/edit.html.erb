@@ -1,6 +1,5 @@
-<h1>Editing actualizacion</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @actualizacion %> |
-<%= link_to 'Back', actualizacions_path %>
+<%- model_class = Actualizacion -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Actualizacion %></h1>
+</div>
+<%= render :partial => 'form' %>

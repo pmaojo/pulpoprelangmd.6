@@ -1,37 +1,46 @@
-<h1>Listing actualizacions</h1>
-
-<table>
+<%- model_class = Actualizacion -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Actualizacion %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>User</th>
-      <th>Peso</th>
-      <th>Dieta</th>
-      <th>Cardio</th>
-      <th>Talla</th>
-      <th>Muscular</th>
-      <th>User</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:peso) %></th>
+      <th><%= model_class.human_attribute_name(:dieta) %></th>
+      <th><%= model_class.human_attribute_name(:cardio) %></th>
+      <th><%= model_class.human_attribute_name(:talla) %></th>
+      <th><%= model_class.human_attribute_name(:muscular) %></th>
+      <th><%= model_class.human_attribute_name(:user_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @actualizacions.each do |actualizacion| %>
       <tr>
-        <td><%= actualizacion.user %></td>
+        <td><%= actualizacion.id %></td>
         <td><%= actualizacion.peso %></td>
         <td><%= actualizacion.dieta %></td>
         <td><%= actualizacion.cardio %></td>
         <td><%= actualizacion.talla %></td>
         <td><%= actualizacion.muscular %></td>
         <td><%= actualizacion.user_id %></td>
-        <td><%= link_to 'Show', actualizacion %></td>
-        <td><%= link_to 'Edit', edit_actualizacion_path(actualizacion) %></td>
-        <td><%= link_to 'Destroy', actualizacion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l actualizacion.created_at, format: :long %></td>
+        <td>
+          <%= link_to actualizacion_path(actualizacion), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to actualizacion_path(actualizacion), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Actualizacion', new_actualizacion_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_actualizacion_path,
+            :class => 'btn btn-primary' %>

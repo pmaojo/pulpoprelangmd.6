@@ -1,39 +1,34 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Actualizacion -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Actualizacion %></h1>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @actualizacion.user %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:peso) %></dt>
+      <dd><pre class="prettyprint"><%= @actualizacion.peso %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:dieta) %></dt>
+      <dd><pre class="prettyprint"><%= @actualizacion.dieta %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:cardio) %></dt>
+      <dd><pre class="prettyprint"><%= @actualizacion.cardio %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:talla) %></dt>
+      <dd><pre class="prettyprint"><%= @actualizacion.talla %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:muscular) %></dt>
+      <dd><pre class="prettyprint"><%= @actualizacion.muscular %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:user_id) %></dt>
+      <dd><pre class="prettyprint"><%= @actualizacion.user_id %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Peso:</strong>
-  <%= @actualizacion.peso %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              actualizacions_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_actualizacion_path(@actualizacion), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              actualizacion_path(@actualizacion),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Dieta:</strong>
-  <%= @actualizacion.dieta %>
-</p>
-
-<p>
-  <strong>Cardio:</strong>
-  <%= @actualizacion.cardio %>
-</p>
-
-<p>
-  <strong>Talla:</strong>
-  <%= @actualizacion.talla %>
-</p>
-
-<p>
-  <strong>Muscular:</strong>
-  <%= @actualizacion.muscular %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @actualizacion.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_actualizacion_path(@actualizacion) %> |
-<%= link_to 'Back', actualizacions_path %>

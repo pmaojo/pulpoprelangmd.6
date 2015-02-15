@@ -1,17 +1,46 @@
-<%= simple_form_for(@actualizacion) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.association :user %>
-    <%= f.input :peso %>
-    <%= f.input :dieta %>
-    <%= f.input :cardio %>
-    <%= f.input :talla %>
-    <%= f.input :muscular %>
-    <%= f.input :user_id %>
+<%= form_for @actualizacion, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :peso, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :peso, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :dieta, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :dieta, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :cardio, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :cardio, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :talla, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :talla, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :muscular, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :muscular, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :user_id, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :user_id, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  actualizacions_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
