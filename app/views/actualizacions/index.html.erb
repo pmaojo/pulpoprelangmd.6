@@ -1,0 +1,37 @@
+<h1>Listing actualizacions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Peso</th>
+      <th>Dieta</th>
+      <th>Cardio</th>
+      <th>Talla</th>
+      <th>Muscular</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @actualizacions.each do |actualizacion| %>
+      <tr>
+        <td><%= actualizacion.user %></td>
+        <td><%= actualizacion.peso %></td>
+        <td><%= actualizacion.dieta %></td>
+        <td><%= actualizacion.cardio %></td>
+        <td><%= actualizacion.talla %></td>
+        <td><%= actualizacion.muscular %></td>
+        <td><%= actualizacion.user_id %></td>
+        <td><%= link_to 'Show', actualizacion %></td>
+        <td><%= link_to 'Edit', edit_actualizacion_path(actualizacion) %></td>
+        <td><%= link_to 'Destroy', actualizacion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Actualizacion', new_actualizacion_path %>

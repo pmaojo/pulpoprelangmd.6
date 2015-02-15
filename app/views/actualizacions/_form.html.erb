@@ -1,0 +1,17 @@
+<%= simple_form_for(@actualizacion) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :user %>
+    <%= f.input :peso %>
+    <%= f.input :dieta %>
+    <%= f.input :cardio %>
+    <%= f.input :talla %>
+    <%= f.input :muscular %>
+    <%= f.input :user_id %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
