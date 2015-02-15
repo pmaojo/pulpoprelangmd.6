@@ -1,49 +1,38 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Ficha -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Ficha %></h1>
+</div>
 
-<p>
-  <strong>Peso inicial:</strong>
-  <%= @ficha.peso_inicial %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:peso_inicial) %></dt>
+      <dd><pre class="prettyprint"><%= @ficha.peso_inicial %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:altura) %></dt>
+      <dd><pre class="prettyprint"><%= @ficha.altura %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:idm) %></dt>
+      <dd><pre class="prettyprint"><%= @ficha.idm %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:peso_ideal) %></dt>
+      <dd><pre class="prettyprint"><%= @ficha.peso_ideal %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:peso_objetivo) %></dt>
+      <dd><pre class="prettyprint"><%= @ficha.peso_objetivo %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:talla_inicial) %></dt>
+      <dd><pre class="prettyprint"><%= @ficha.talla_inicial %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:talla_objetivo) %></dt>
+      <dd><pre class="prettyprint"><%= @ficha.talla_objetivo %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:ejercicio) %></dt>
+      <dd><pre class="prettyprint"><%= @ficha.ejercicio %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Altura:</strong>
-  <%= @ficha.altura %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              fichas_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_ficha_path(@ficha), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              ficha_path(@ficha),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Idm:</strong>
-  <%= @ficha.idm %>
-</p>
-
-<p>
-  <strong>Peso ideal:</strong>
-  <%= @ficha.peso_ideal %>
-</p>
-
-<p>
-  <strong>Peso objetivo:</strong>
-  <%= @ficha.peso_objetivo %>
-</p>
-
-<p>
-  <strong>Talla inicial:</strong>
-  <%= @ficha.talla_inicial %>
-</p>
-
-<p>
-  <strong>Talla objetivo:</strong>
-  <%= @ficha.talla_objetivo %>
-</p>
-
-<p>
-  <strong>Ejercicio:</strong>
-  <%= @ficha.ejercicio %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @ficha.user %>
-</p>
-
-<%= link_to 'Edit', edit_ficha_path(@ficha) %> |
-<%= link_to 'Back', fichas_path %>

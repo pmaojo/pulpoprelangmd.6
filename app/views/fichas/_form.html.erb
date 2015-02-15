@@ -1,19 +1,58 @@
-<%= simple_form_for(@ficha) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :peso_inicial %>
-    <%= f.input :altura %>
-    <%= f.input :idm %>
-    <%= f.input :peso_ideal %>
-    <%= f.input :peso_objetivo %>
-    <%= f.input :talla_inicial %>
-    <%= f.input :talla_objetivo %>
-    <%= f.input :ejercicio %>
-    <%= f.association :user %>
+<%= form_for @ficha, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :peso_inicial, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :peso_inicial, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :altura, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :altura, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :idm, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :idm, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :peso_ideal, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :peso_ideal, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :peso_objetivo, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :peso_objetivo, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :talla_inicial, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :talla_inicial, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :talla_objetivo, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :talla_objetivo, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :ejercicio, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :ejercicio, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  fichas_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
