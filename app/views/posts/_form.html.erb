@@ -1,19 +1,52 @@
-<%= simple_form_for(@post) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :titulo %>
-    <%= f.input :body %>
-    <%= f.input :link %>
-    <%= f.input :imagen %>
-    <%= f.association :category %>
-    <%= f.association :user %>
-    <%= f.input :published %>
-    <%= f.input :category_id %>
-    <%= f.input :user_id %>
+<%= form_for @post, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :titulo, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :titulo, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :body, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :body, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :link, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :link, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :imagen, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :imagen, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :published, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :published, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :category_id, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :category_id, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :user_id, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :user_id, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  posts_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
