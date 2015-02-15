@@ -29,6 +29,7 @@ class FichasController < ApplicationController
   # POST /fichas.json
   def create
     @ficha = Ficha.new(ficha_params)
+    @ficha.user = current_user
 
     respond_to do |format|
       if @ficha.save
