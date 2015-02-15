@@ -1,34 +1,30 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Question -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Question %></h1>
+</div>
 
-<p>
-  <strong>Titulo:</strong>
-  <%= @question.titulo %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:titulo) %></dt>
+      <dd><pre class="prettyprint"><%= @question.titulo %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:mensaje) %></dt>
+      <dd><pre class="prettyprint"><%= @question.mensaje %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:user_id) %></dt>
+      <dd><pre class="prettyprint"><%= @question.user_id %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:category_id) %></dt>
+      <dd><pre class="prettyprint"><%= @question.category_id %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Mensaje:</strong>
-  <%= @question.mensaje %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              questions_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_question_path(@question), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              question_path(@question),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @question.user_id %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @question.category_id %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @question.user %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @question.category %>
-</p>
-
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', questions_path %>
