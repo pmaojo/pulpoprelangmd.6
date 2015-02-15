@@ -1,0 +1,41 @@
+<h1>Listing fichas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Peso inicial</th>
+      <th>Altura</th>
+      <th>Idm</th>
+      <th>Peso ideal</th>
+      <th>Peso objetivo</th>
+      <th>Talla inicial</th>
+      <th>Talla objetivo</th>
+      <th>Ejercicio</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fichas.each do |ficha| %>
+      <tr>
+        <td><%= ficha.peso_inicial %></td>
+        <td><%= ficha.altura %></td>
+        <td><%= ficha.idm %></td>
+        <td><%= ficha.peso_ideal %></td>
+        <td><%= ficha.peso_objetivo %></td>
+        <td><%= ficha.talla_inicial %></td>
+        <td><%= ficha.talla_objetivo %></td>
+        <td><%= ficha.ejercicio %></td>
+        <td><%= ficha.user %></td>
+        <td><%= link_to 'Show', ficha %></td>
+        <td><%= link_to 'Edit', edit_ficha_path(ficha) %></td>
+        <td><%= link_to 'Destroy', ficha, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ficha', new_ficha_path %>
