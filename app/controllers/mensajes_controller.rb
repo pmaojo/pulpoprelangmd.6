@@ -29,6 +29,7 @@ class MensajesController < ApplicationController
   # POST /mensajes.json
   def create
     @mensaje = Mensaje.new(mensaje_params)
+    @mensaje.user = current_user
 
     respond_to do |format|
       if @mensaje.save
