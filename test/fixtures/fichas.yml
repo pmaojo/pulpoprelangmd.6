@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  peso_inicial: 9.99
+  altura: 9.99
+  idm: 9.99
+  peso_ideal: 9.99
+  peso_objetivo: 9.99
+  talla_inicial: 9.99
+  talla_objetivo: 9.99
+  ejercicio: 9.99
+  user_id: 
+
+two:
+  peso_inicial: 9.99
+  altura: 9.99
+  idm: 9.99
+  peso_ideal: 9.99
+  peso_objetivo: 9.99
+  talla_inicial: 9.99
+  talla_objetivo: 9.99
+  ejercicio: 9.99
+  user_id: 
